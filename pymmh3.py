@@ -59,11 +59,11 @@ def hash( key, seed = 0x0 ):
              key[ block_start + 2 ] << 16 | \
              key[ block_start + 1 ] <<  8 | \
              key[ block_start + 0 ]
-             
+
         k1 = ( c1 * k1 ) & 0xFFFFFFFF
         k1 = ( k1 << 15 | k1 >> 17 ) & 0xFFFFFFFF # inlined ROTL32
         k1 = ( c2 * k1 ) & 0xFFFFFFFF
-        
+
         h1 ^= k1
         h1  = ( h1 << 13 | h1 >> 19 ) & 0xFFFFFFFF # inlined ROTL32
         h1  = ( h1 * 5 + 0xe6546b64 ) & 0xFFFFFFFF
@@ -79,7 +79,69 @@ def hash( key, seed = 0x0 ):
         k1 ^= key[ tail_index + 1 ] << 8
     if tail_size >= 1:
         k1 ^= key[ tail_index + 0 ]
-    
+
+    if tail_size > 0:
+        k1  = ( k1 * c1 ) & 0xFFFFFFFF
+        k1  = ( k1 << 15 | k1 >> 17 ) & 0xFFFFFFFF # inlined ROTL32
+        k1  = ( k1 * c2 ) & 0xFFFFFFFF
+        h1 ^= k1
+
+    #finalization
+    unsigned_val = fmix( h1 ^ length )
+    if unsigned_val & 0x80000000 == 0:
+        return unsigned_val
+    else:
+        return -( (unsigned_val ^ 0xFFFFFFFF) + 1 )
+
+
+def hash_string( key, seed = 0x0 ):
+    '''
+    Implements 32bit murmur3 hash.  Compatible with Scala's MurmurHash3.StringHash
+
+    See:
+        - https://github.com/scala/scala/blob/v2.12.3/src/library/scala/util/hashing/MurmurHash3.scala#L72
+    '''
+
+    key = bytearray( xencode(key) )
+
+    def fmix( h ):
+        h ^= h >> 16
+        h  = ( h * 0x85ebca6b ) & 0xFFFFFFFF
+        h ^= h >> 13
+        h  = ( h * 0xc2b2ae35 ) & 0xFFFFFFFF
+        h ^= h >> 16
+        return h
+
+    length = len( key )
+    nblocks = int( length / 2 )
+
+    h1 = seed
+
+    c1 = 0xcc9e2d51
+    c2 = 0x1b873593
+
+    # body
+    for block_start in xrange( 0, nblocks * 2, 2 ):
+        # ??? big endian?
+        k1 = (key[ block_start + 0 ] << 16) + \
+             key[ block_start + 1 ]
+
+        k1 = ( c1 * k1 ) & 0xFFFFFFFF
+        k1 = ( k1 << 15 | k1 >> 17 ) & 0xFFFFFFFF # inlined ROTL32
+        k1 = ( c2 * k1 ) & 0xFFFFFFFF
+
+        h1 ^= k1
+        h1  = ( h1 << 13 | h1 >> 19 ) & 0xFFFFFFFF # inlined ROTL32
+        h1  = ( h1 * 5 + 0xe6546b64 ) & 0xFFFFFFFF
+
+    # tail
+    tail_index = nblocks * 2
+    k1 = 0
+    tail_size = length & 3
+
+    if tail_size >= 1:
+        k1 ^= key[ tail_index + 0 ]
+
     if tail_size > 0:
         k1  = ( k1 * c1 ) & 0xFFFFFFFF
         k1  = ( k1 << 15 | k1 >> 17 ) & 0xFFFFFFFF # inlined ROTL32
@@ -440,12 +502,12 @@ def hash_bytes( key, seed = 0x0, x64arch = True ):
 
 if __name__ == "__main__":
     import argparse
-    
+
     parser = argparse.ArgumentParser( 'pymurmur3', 'pymurmur [options] "string to hash"' )
     parser.add_argument( '--seed', type = int, default = 0 )
     parser.add_argument( 'strings', default = [], nargs='+')
-    
+
     opts = parser.parse_args()
-    
+
     for str_to_hash in opts.strings:
         sys.stdout.write( '"%s" = 0x%08X\n' % ( str_to_hash, hash( str_to_hash ) ) )
