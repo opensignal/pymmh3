@@ -1,0 +1,12 @@
+[
+  {
+    "seed": 4157243346,
+    "string": "IAmaComplicatedStringf7ca7fd2",
+    "expected": 961863633
+  },
+  {
+    "seed": 4157243346,
+    "string": "1420166079300_j9S2ZDv9",
+    "expected": 1842574719
+  }
+]

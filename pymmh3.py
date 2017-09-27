@@ -137,7 +137,7 @@ def hash_string( key, seed = 0x0 ):
     # tail
     tail_index = nblocks * 2
     k1 = 0
-    tail_size = length & 3
+    tail_size = length & 1
 
     if tail_size >= 1:
         k1 ^= key[ tail_index + 0 ]

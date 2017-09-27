@@ -4,6 +4,7 @@
 import os
 import sys
 import unittest
+import json
 
 file_dir = os.path.dirname( __file__ )
 sys.path.append( os.path.join( file_dir, '..' ) )
@@ -20,8 +21,7 @@ class Testpymmh3( unittest.TestCase ):
                 solution[ l ] = int( f.readline(), base )
 
         return solution
-        
-    
+
     def test_32bit_basic_string( self ):
         solution = self._load_solutions('solution_hash32_seed0.txt', 10)
 
@@ -129,6 +129,15 @@ class Testpymmh3( unittest.TestCase ):
                 s = solution[l]
                 r = pymmh3.hash128( bytearray( l ), seed = 0x1234ABCD, x64arch = True )
                 self.assertEqual( s, r, 'different hash for line: "%s"\n0x%08X != 0x%08X' % ( l, s, r ) )
+
+    def test_hash_string( self ):
+        with open( os.path.join( file_dir, 'solution_hash_string.json' ) ) as test_file:
+            testcases = json.load(test_file)
+
+        for case in testcases:
+            s = case['expected']
+            r = pymmh3.hash_string( case['string'] , case['seed'] )
+            self.assertEqual( s, r, 'different hash for case: \n0x%08X != 0x%08X' % ( s, r ) )
 
 if __name__ == "__main__":
     unittest.main()
