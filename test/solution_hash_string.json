@@ -8,5 +8,160 @@
     "seed": 4157243346,
     "string": "1420166079300_j9S2ZDv9",
     "expected": 1842574719
+  },
+  {
+    "seed": 4157243346,
+    "string": "790b11dd-13ff-46ac-9622-9d5a2d6b8a76",
+    "expected": -1429774052
+  },
+  {
+    "seed": 4157243346,
+    "string": "00237732-36d2-4196-bc2f-d5e143047b51",
+    "expected": -1061240306
+  },
+  {
+    "seed": 4157243346,
+    "string": "5ad9aca6-8c0f-456b-84b6-8208abd9adc8",
+    "expected": -599189566
+  },
+  {
+    "seed": 4157243346,
+    "string": "1c412ed9-e89f-4377-96ba-47f2849d597a",
+    "expected": -1910066132
+  },
+  {
+    "seed": 4157243346,
+    "string": "156bd274-9bcd-44ef-83ce-beaa847f9a48",
+    "expected": 1364349669
+  },
+  {
+    "seed": 4157243346,
+    "string": "b5822eea-41c3-4fd6-88a0-0f26f791b41e",
+    "expected": 356975395
+  },
+  {
+    "seed": 4157243346,
+    "string": "77bbe3e3-20a5-4a97-b423-6358d2d7a6bd",
+    "expected": -1521879834
+  },
+  {
+    "seed": 4157243346,
+    "string": "e1abc415-bfc2-44cb-b570-84271279e3cd",
+    "expected": -938964678
+  },
+  {
+    "seed": 4157243346,
+    "string": "cb3db518-7f97-4693-9e8d-4cebef9354df",
+    "expected": 669928856
+  },
+  {
+    "seed": 4157243346,
+    "string": "fc6ba4b6-71e7-4da8-9eb2-66d8ad50f11d",
+    "expected": 1617363599
+  },
+  {
+    "seed": 4157243346,
+    "string": "2286be1f-9d6d-42f8-9282-bbd30b721769",
+    "expected": 28385525
+  },
+  {
+    "seed": 4157243346,
+    "string": "a384a4e9-5d14-4e7d-86fd-c0e733c8eced",
+    "expected": -930801152
+  },
+  {
+    "seed": 4157243346,
+    "string": "c209461a-6fbb-4c0e-863e-e6bfb77af776",
+    "expected": -734449948
+  },
+  {
+    "seed": 4157243346,
+    "string": "fff09069-4eaf-4d0d-a159-2ea807f09317",
+    "expected": 1354414490
+  },
+  {
+    "seed": 4157243346,
+    "string": "8cc2126e-a86d-487b-90fb-04f519a5d4e0",
+    "expected": 547256079
+  },
+  {
+    "seed": 4157243346,
+    "string": "bf891ef2-edbb-4818-bf01-93eb52dbed3e",
+    "expected": -606576735
+  },
+  {
+    "seed": 4157243346,
+    "string": "f9157d5e-4e81-4444-aeca-383719a750e7",
+    "expected": 1760693644
+  },
+  {
+    "seed": 4157243346,
+    "string": "765083da-08d1-4f0f-a1a7-dd78641b405f",
+    "expected": -1660809833
+  },
+  {
+    "seed": 4157243346,
+    "string": "416ebf39-cc8e-4ac3-bda0-eea873d2eca7",
+    "expected": -512986328
+  },
+  {
+    "seed": 4157243346,
+    "string": "1a097b5a-a9fc-458c-8973-9b1df56b607f",
+    "expected": -1927725823
+  },
+  {
+    "seed": 4157243346,
+    "string": "f92aca66-2c4a-46ad-bd80-29f9e7eb9b06",
+    "expected": 2122783375
+  },
+  {
+    "seed": 4157243346,
+    "string": "5fdf2f59-5458-441f-8484-ed918b8585c2",
+    "expected": 66416645
+  },
+  {
+    "seed": 4157243346,
+    "string": "e77572c8-19c1-4b0b-9e27-ff6944484225",
+    "expected": 1779219663
+  },
+  {
+    "seed": 4157243346,
+    "string": "11759d3c-2e5e-4e36-9403-2fe07b8420e4",
+    "expected": 876503915
+  },
+  {
+    "seed": 4157243346,
+    "string": "fbdf062f-6afa-4c7c-87e6-d756ad905f7a",
+    "expected": 165152598
+  },
+  {
+    "seed": 4157243346,
+    "string": "aa91b673-9d6a-4bed-a89d-8808a3646018",
+    "expected": -1953657779
+  },
+  {
+    "seed": 4157243346,
+    "string": "cf7b374c-c9be-4f6e-b95e-5d36c84462e4",
+    "expected": -1675586442
+  },
+  {
+    "seed": 4157243346,
+    "string": "8232b509-40c7-4b47-8857-bb524e68dea0",
+    "expected": 254647457
+  },
+  {
+    "seed": 4157243346,
+    "string": "1785e3a8-5198-4de6-95d5-3cd8a2e3ee62",
+    "expected": -704630934
+  },
+  {
+    "seed": 4157243346,
+    "string": "496b221b-56fd-4f4c-88da-10b692eb565b",
+    "expected": -1937532974
+  },
+  {
+    "seed": 4157243346,
+    "string": "e7cc87d3-c963-41eb-90dd-82c10735b8d6",
+    "expected": 1521450337
   }
 ]
