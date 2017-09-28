@@ -1,13 +1,12 @@
 from setuptools import setup
 
 setup(
-    name = 'pymmh3',
-    version = '1.0',
+    name = 'opensignal-pymmh3',
+    version = '1.0.2',
     description = 'Pure python implementation ',
     license = 'License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication',
     py_modules = ['pymmh3'],
     keywords = "utility hash MurmurHash",
-    long_description = open('README.md').read(),
     classifiers = [
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
